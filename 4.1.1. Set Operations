@@ -1,0 +1,24 @@
+# Function to read space-separated integers from input
+def read_set(prompt):
+    user_input = input(prompt)
+    try:
+        # Convert space-separated strings to integers and then to a set
+        return set(map(int, user_input.split()))
+    except ValueError:
+        # Handle cases where input might not be integers
+        print("Invalid input. Please enter space-separated integers.")
+        return set()
+
+# Read Set A and Set B according to the specified input format
+set_a = read_set("Set A: ")
+set_b = read_set("Set B: ")
+
+# Perform set operations
+union_set = set_a.union(set_b)
+intersection_set = set_a.intersection(set_b)
+difference_set = set_a.difference(set_b) # This is A - B
+
+# Print results according to the specified output format
+print(f"Union: {union_set}")
+print(f"Intersection: {intersection_set}")
+print(f"Difference: {difference_set}")
