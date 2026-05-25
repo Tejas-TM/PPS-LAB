@@ -1,0 +1,24 @@
+def calculate_grade(percentage):
+    if percentage > 75:
+        return "Distinction"
+    elif percentage >= 60 and percentage < 75:
+        return "First Division"
+    elif percentage >= 50 and percentage < 60:
+        return "Second Division"
+    elif percentage >= 40 and percentage < 50:
+        return "Third Division"
+    else:
+        return "Fail"
+
+marks_input = input()
+marks_list = list(map(float, marks_input.split()))
+
+total_marks = sum(marks_list)
+percentage = (total_marks / 400) * 100
+
+grade = calculate_grade(percentage)
+
+print(int(total_marks))
+print(f"{percentage:.2f}")
+print(grade)
+
